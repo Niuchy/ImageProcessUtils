@@ -265,25 +265,10 @@ class Morphological_Transform(ImageProcess):
     
 
 def main():    
-    
-    
-    
-    image_file = 'E:/Code/My_own_project/ultrasound/data/1st/images'
-    
-    #image_file = 'E:/Code/My_own_project/ultrasound/data/1st/images_circle_out'
-    dst_file = 'E:/Code/My_own_project/ultrasound/code/saliency/result/my_ImageProcess_images'
-    
+    image_file = 'images'
+    dst_file = 'my_ImageProcess_images' 
     if not os.path.exists(dst_file):
-        os.makedirs(dst_file)
-    
-    for image_name in os.listdir(image_file ):
-        print(image_name) 
-        img = cv2.imread(os.path.join(image_file,image_name))
-        thresh = Threshold(img,image_name,dst_file )
-        thresh.forward(threshvalues = [10,20,30,40,50,60,70,80,90,127])
-
-    
-    
+        os.makedirs(dst_file) 
    imageprocess = ImageProcess(image_file)
    imageprocess.forward([10,20,30,40,50,60,70,80,90,127],dst_file)
     
